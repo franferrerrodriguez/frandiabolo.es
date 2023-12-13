@@ -1,0 +1,53 @@
+<div class="contact">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Email (*):</label>
+      <input type="email" class="form-control" formControlName="email" />
+      <div
+        *ngIf="
+          form.get('email')?.hasError('required') && form.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        El campo de correo electrónico es obligatorio.
+      </div>
+      <div
+        *ngIf="
+          form.get('email')?.hasError('email') && form.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        Por favor, introduce un correo electrónico válido.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Mensaje (*):</label>
+      <textarea
+        class="form-control"
+        formControlName="message"
+        rows="3"
+      ></textarea>
+      <div
+        *ngIf="
+          form.get('message')?.hasError('required') &&
+          form.get('message')?.touched
+        "
+        class="text-danger"
+      >
+        El campo de mensaje es obligatorio.
+      </div>
+      <div
+        *ngIf="
+          form.get('message')?.hasError('minLength') &&
+          form.get('message')?.touched
+        "
+        class="text-danger"
+      >
+        El mensaje debe tener al menos 50 caracteres.
+      </div>
+    </div>
+    <button [disabled]="!form.valid" type="submit" class="btn btn-light">
+      Enviar
+    </button>
+  </form>
+</div>

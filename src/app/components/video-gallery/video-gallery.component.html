@@ -1,0 +1,11 @@
+<div class="row video-gallery">
+  <ng-container *ngFor="let frameVideo of frameVideos; let i = index">
+    <div class="col-md-3">
+      <dailymotion-frame [frameVideo]="frameVideo"></dailymotion-frame>
+    </div>
+    <div *ngIf="0 === (i + 1) % 4"></div>
+  </ng-container>
+  <div *ngIf="0 === frameVideos.length" class="col-md-12">
+    <div class="alert alert-danger" role="alert">Empty list of videos</div>
+  </div>
+</div>
