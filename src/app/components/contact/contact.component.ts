@@ -47,6 +47,7 @@ export class ContactComponent {
       .post('https://formspree.io/f/xnqkekwn', this.form.value)
       .pipe(
         finalize(() => {
+          this.form.reset();
           this.submit = false;
           this.cdr.detectChanges();
         })
