@@ -46,8 +46,31 @@
         El mensaje debe tener al menos 50 caracteres.
       </div>
     </div>
-    <button [disabled]="!form.valid" type="submit" class="btn btn-light">
+    <button
+      [disabled]="submit || !form.valid"
+      type="submit"
+      class="btn btn-light"
+    >
       Enviar
     </button>
+
+    <div
+      *ngIf="success"
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+    >
+      El formulario ha sido enviado correctamente.
+    </div>
+
+    <div
+      *ngIf="error"
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <p>
+        Ha ocurrido un error enviando el formulario. Por favor, contacte con:<br />
+        <b>franferrerrodriguez&#64;gmail.com</b>
+      </p>
+    </div>
   </form>
 </div>
