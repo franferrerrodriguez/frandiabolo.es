@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DailymotionFrame } from 'src/app/interfaces/dailymotion-frame.interface';
+import { TranslationModule } from 'src/app/modules/translation.module';
 import { DailymotionFrameComponent } from '../dailymotion-frame/dailymotion-frame.component';
 
 @Component({
   selector: 'video-gallery',
   standalone: true,
-  imports: [CommonModule, DailymotionFrameComponent],
+  imports: [CommonModule, TranslationModule, DailymotionFrameComponent],
   templateUrl: './video-gallery.component.html',
   styleUrl: './video-gallery.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

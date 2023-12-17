@@ -1,7 +1,9 @@
 <div class="contact">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label class="form-label">Email (*):</label>
+      <label class="form-label"
+        >{{ "contact.email.label" | translate }} (*):</label
+      >
       <input type="email" class="form-control" formControlName="email" />
       <div
         *ngIf="
@@ -9,7 +11,7 @@
         "
         class="text-danger"
       >
-        El campo de correo electrónico es obligatorio.
+        {{ "contact.email.validations.required" | translate }}
       </div>
       <div
         *ngIf="
@@ -17,11 +19,13 @@
         "
         class="text-danger"
       >
-        Por favor, introduce un correo electrónico válido.
+        {{ "contact.email.validations.format" | translate }}
       </div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Mensaje (*):</label>
+      <label class="form-label">
+        {{ "contact.message.label" | translate }} (*):</label
+      >
       <textarea
         class="form-control"
         formControlName="message"
@@ -34,7 +38,7 @@
         "
         class="text-danger"
       >
-        El campo de mensaje es obligatorio.
+        {{ "contact.message.validations.required" | translate }}
       </div>
       <div
         *ngIf="
@@ -43,7 +47,7 @@
         "
         class="text-danger"
       >
-        El mensaje debe tener al menos 50 caracteres.
+        {{ "contact.message.validations.minLength" | translate }}
       </div>
     </div>
     <button
@@ -51,7 +55,7 @@
       type="submit"
       class="btn btn-light"
     >
-      Enviar
+      {{ "contact.send.label" | translate }}
     </button>
 
     <div
@@ -59,7 +63,7 @@
       class="alert alert-success alert-dismissible fade show"
       role="alert"
     >
-      El formulario ha sido enviado correctamente.
+      {{ "contact.ok" | translate }}
     </div>
 
     <div
@@ -68,8 +72,8 @@
       role="alert"
     >
       <p>
-        Ha ocurrido un error enviando el formulario. Por favor, contacte con:<br />
-        <b>franferrerrodriguez&#64;gmail.com</b>
+        {{ "contact.ko" | translate }}<br />
+        <b> {{ "common.emails" | translate }}</b>
       </p>
     </div>
   </form>

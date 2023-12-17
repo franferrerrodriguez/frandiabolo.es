@@ -6,6 +6,8 @@
     <div *ngIf="0 === (i + 1) % 4"></div>
   </ng-container>
   <div *ngIf="0 === frameVideos.length" class="col-md-12">
-    <div class="alert alert-danger" role="alert">Empty list of videos</div>
+    <div class="alert alert-danger" role="alert">
+      {{ "video-gallery.empty-list" | translate }}
+    </div>
   </div>
 </div>

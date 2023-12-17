@@ -12,11 +12,17 @@ import {
   Validators,
 } from '@angular/forms';
 import { finalize } from 'rxjs';
+import { TranslationModule } from 'src/app/modules/translation.module';
 
 @Component({
   selector: 'contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    TranslationModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

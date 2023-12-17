@@ -1,0 +1,38 @@
+{
+  "common": {
+    "welcome": "Welcome to ",
+    "foundationYear": "2011",
+    "domains": ["frandiabolo.es"],
+    "emails": ["franferrerrodriguez@gmail.com"]
+  },
+  "navbar": {
+    "contact": { "label": "Contact" }
+  },
+  "contact": {
+    "ok": "The form has been submitted successfully.",
+    "ko": "An error occurred while submitting the form. Please contact:",
+    "email": {
+      "label": "Email",
+      "validations": {
+        "required": "The email field is mandatory.",
+        "format": "Please enter a valid email address."
+      }
+    },
+    "message": {
+      "label": "Message",
+      "validations": {
+        "required": "The message field is mandatory.",
+        "minLength": "The message must have at least 50 characters."
+      }
+    },
+    "send": {
+      "label": "Send"
+    }
+  },
+  "video-gallery": {
+    "empty-list": "Empty list of videos."
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

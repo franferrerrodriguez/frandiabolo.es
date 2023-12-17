@@ -3,26 +3,47 @@
     <a class="navbar-brand" href="#">
       <img
         src="assets/logo.jpg"
-        alt=""
+        alt="Logo"
         width="30"
         height="24"
         class="d-inline-block align-text-top"
       />
-      {{ title }}
+      {{ "common.welcome" | translate }}
+      <b>{{ "common.domains" | translate }}</b>
     </a>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul
-        class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll"
-        style="--bs-scroll-height: 100px"
-      >
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a
             class="nav-link active"
             aria-current="page"
             href="#"
             (click)="scrollToContact()"
-            >Contacto</a
+            >{{ "navbar.contact.label" | translate }}</a
           >
+        </li>
+        <li class="nav-item">
+          <button class="nav-link btn" (click)="useLanguage('es')">
+            <img src="assets/es.png" alt="Spanish Flag" />
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link btn" (click)="useLanguage('en')">
+            <img src="assets/en.png" alt="English Flag" />
+          </button>
         </li>
       </ul>
     </div>
